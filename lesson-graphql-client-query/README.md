@@ -3,7 +3,7 @@
 https://www.nikgraf.com/
 
 - studied Computer Science (now it helps a bit)
-- Consulting (US Companies Fortune 50, Ready2Order, Austrian Institute of Technology, Easyname, Eversports)
+- Consulting (Fortune 50 US Company, Ready2Order, Austrian Institute of Technology, Easyname, Eversports)
 - https://changefeed.app/
 - https://egghead.io/instructors/nik-graf
 
