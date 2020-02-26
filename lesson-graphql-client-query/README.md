@@ -64,3 +64,20 @@ Build you own Profile page based on Github e.g. https://github.com/nikgraf using
 https://www.graphqlhub.com/playground?query=%7B%0A%20%20github%20%7B%0A%20%20%20%20user(username%3A%20%22nikgraf%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20avatar_url%0A%20%20%20%20%20%20repos%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A
 
 Other public APIs https://github.com/APIs-guru/graphql-apis
+
+## Using Variables
+
+```graphql
+query($veggie: Boolean!) {
+  recipes(vegetarian: $veggie) {
+    title
+    vegetarian
+  }
+}
+```
+
+```variables
+{
+   "veggie": false
+}
+```
