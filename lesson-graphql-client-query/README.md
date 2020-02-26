@@ -14,6 +14,11 @@ One-two sentence each
 ## What did you do so far?
 
 Data fetching via HTTP?
+
+- https://egghead.io/api/v1/instructors/nik-graf/lessons
+- https://egghead.io/api/v1/instructors/nik-graf/series
+- https://orf.at/static-extras/bulawindow.json
+
 Show fetching an requestion data in the browser?
 -> https://egghead.io/instructors/nik-graf
 Why do we do this? In the end store data somewhere, retrieve it and write it to somewhere.
