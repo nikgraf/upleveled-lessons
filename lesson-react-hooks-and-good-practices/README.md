@@ -1,5 +1,7 @@
 ## Making impossible states impossible
 
+## Variants
+
 Code-along: Create the Arrow component
 
 ```jsx
@@ -13,25 +15,88 @@ Code-along: Create the Arrow component
 vs
 
 ```jsx
-<Arrow varient="up" />
-<Arrow varient="down" />
+<Arrow variant="up" />
+<Arrow variant="down" />
+// <Arrow variant="up" variant="down" />
 ```
+
+Why can't I have the same prop key twice? Props map to an object and there always only can be one key.
 
 **Exercise** Create a button component which can either be `filled, outline or text`.
 
-**Conclusion**: Care about you props design!
+## Combining Props
+
+Possible states according to the designer:
+
+- Black solid up
+- Black solid down
+- Red solid up
+- Red solid down
+- Red dotted up
+- Red dotted down
+
+```js
+color: black | red;
+lineStyle: solid | dotted;
+variant: up | down;
+```
+
+```jsx
+<Arrow color="black" lineStyle="solid" variant="up" />
+<Arrow color="black" lineStyle="solid" variant="down" />
+<Arrow color="red" lineStyle="solid" variant="up" />
+<Arrow color="red" lineStyle="solid" variant="down" />
+<Arrow color="red" lineStyle="dotted" variant="up" />
+<Arrow color="red" lineStyle="dotted" variant="down" />
+```
+
+```jsx
+// oh oh
+<Arrow color="black" lineStyle="solid" variant="up" />
+<Arrow color="black" lineStyle="solid" variant="down" />
+```
+
+```js
+lineStyle: solidBlack | solidRed | dottedRed;
+variant: up | down;
+```
+
+```jsx
+<Arrow lineStyle="solidBlack" variant="up" />
+<Arrow lineStyle="solidBlack" variant="down" />
+<Arrow lineStyle="solidRed" variant="up" />
+<Arrow lineStyle="solidRed" variant="down" />
+<Arrow lineStyle="dottedRed" variant="up" />
+<Arrow lineStyle="dottedRed" variant="down" />
+```
+
+Tadaaaaa 🎊
+
+**Conclusion**: Care about you props design! Well design props makes it easier for others and often your future self to use your components as intended.
 
 ## When to split up components
 
 There are no clear rules and different people have different preferences.
 
-TODO show example of a long component and 3 ways of how to split it up.
+Let's take https://www.nikgraf.com/courses for example.
+Each course uses exactly the same structure. Any ideas?
+
+Yes, let's make a course component and use it. Then we have one abstraction! What are the pros and cons?
+
+Pro:
+
+- Easier to change this one abstraction
+
+Con:
+
+- Harder to grasp if you code is spread over dozens of files containing only couple of lines. You have to get good at navigating the filesystem.
+- Locked into a pattern and you build resistance to render single items differently. For exmple if you want to highlight the first and the third with a different background color.
 
 What are simple rules to follow?
 
 1. If you use a snippet multiple times inside one component don't split up.
 2. If you use a snippet multiple times inside multiple components then create a component for it.
-3. If a component contains non-generic code e.g. props or a conditional then split it up and possible inline it.
+3. If a component contains non-generic code e.g. props or a conditional then split it up and possible inline it. (e.g. you add logic that on hover only a component with a specific name would hightlight differently, btw might be able to solve via a generic prop)
 
 ## Multiple components per file vs only one component per file
 
