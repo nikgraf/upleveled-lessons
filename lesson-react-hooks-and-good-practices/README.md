@@ -105,9 +105,19 @@ In some cases it makes sense though and it's for you to decide when it's fine. D
 
 ## key prop explained
 
+1. Render without key + update array => warning
+2. Render with number index key + update array => no warning, but broken after updating the array
+3. Render with id key + update array => Yay!
+
+**Pro note**: The key prop allows you to return same element/component type, but force React to unmount the previous instance, and mount a new one.
+
+**Pro exercise**: Create a list with a detail view (form) next to the list and whenever you select an item the form update the values to the specific item.
+
 ## useEffect
 
--> pdf
+**Code aling** update the title (first on every render, then only when the message count changes)
+
+https://github.com/donavon/hook-flow
 
 **Code along**: online/offline
 
@@ -117,8 +127,21 @@ show online/offline example
 
 ## useRef
 
+Get access to the actual DOM element. When is this useful? For DOM element functionality that's only available via a function call.
+Or to bail out of React -> Maps or Charting libs.
+
 **Code along**: create Leaflet component
 
 ## Context
 
-## Suspense
+What if two components need to share the same state?
+
+For example:
+
+- Theme
+- Current language
+- Current user
+
+**Code along**: Current user example of profile + chat group people list.
+
+## Bonus: Suspense
