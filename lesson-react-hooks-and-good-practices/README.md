@@ -105,8 +105,15 @@ In some cases it makes sense though and it's for you to decide when it's fine. D
 
 ## key prop explained
 
+https://reactjs.org/docs/lists-and-keys.html#keys
+
+> Keys help React identify which items have changed, are added, or are removed.
+
 1. Render without key + update array => warning
-2. Render with number index key + update array => no warning, but broken after updating the array
+2. Render with number index key + update array => no warning, but not recommended
+
+https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318
+
 3. Render with id key + update array => Yay!
 
 **Pro note**: The key prop allows you to return same element/component type, but force React to unmount the previous instance, and mount a new one.
