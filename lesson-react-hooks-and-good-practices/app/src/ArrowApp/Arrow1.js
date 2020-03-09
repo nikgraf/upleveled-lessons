@@ -1,7 +1,12 @@
 import React from "react";
 
 function Arrow(props) {
-  return <span style={{ fontSize: "3rem" }}>{props.up ? "↑" : "↓"}</span>;
+  if (props.up === true) {
+    return "↑";
+  } else if (props.down === true) {
+    return "↓";
+  }
+  return null;
 }
 
 export default Arrow;

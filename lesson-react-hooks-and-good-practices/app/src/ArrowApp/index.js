@@ -1,17 +1,22 @@
 import React from "react";
-import Arrow from "./Arrow1";
-// import Arrow from "./Arrow2";
+import Arrow2 from "./Arrow2";
 
 function App() {
   return (
     <div>
-      <Arrow up />
+      Hello World
+      {/* <Arrow up />
       <Arrow down />
-      {/* <Arrow up down /> */}
-
-      <Arrow variant="up" />
-      <Arrow variant="down" />
-      {/* <Arrow variant="up" variant="down" /> */}
+      <Arrow up down /> */}
+      {/* <Arrow variant="up" />
+      <Arrow variant="down" variant="up" /> */}
+      {/* <Arrow variant="right" /> */}
+      <Arrow2 lineStyle="solidBlack" variant="up" />
+      <Arrow2 lineStyle="solidBlack" variant="down" />
+      <Arrow2 lineStyle="solidRed" variant="up" />
+      <Arrow2 lineStyle="solidRed" variant="down" />
+      <Arrow2 lineStyle="dottedRed" variant="up" />
+      <Arrow2 lineStyle="dottedRed" variant="down" />
     </div>
   );
 }

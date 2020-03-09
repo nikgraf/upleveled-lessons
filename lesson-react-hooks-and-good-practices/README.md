@@ -116,6 +116,8 @@ https://reactjs.org/docs/lists-and-keys.html#keys
 
 https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318
 
+Case where it breaks: https://jsbin.com/wohima/edit?js,output
+
 3. Render with id key + update array => Yay!
 
 **Pro note**: The key prop allows you to return same element/component type, but force React to unmount the previous instance, and mount a new one.
