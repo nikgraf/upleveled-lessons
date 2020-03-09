@@ -8,8 +8,10 @@ document.body.appendChild(link);
 
 function Map() {
   const mapWrapperElement = useRef(null);
+  console.log("render", mapWrapperElement.current);
 
   useEffect(() => {
+    console.log("useEffect", mapWrapperElement.current);
     const map = Leaflet.map(mapWrapperElement.current).setView(
       [51.505, -0.09],
       13
@@ -21,7 +23,12 @@ function Map() {
     }).addTo(map);
   }, []);
 
-  return <div ref={mapWrapperElement} style={{ width: 600, height: 400 }} />;
+  return (
+    <div
+      ref={mapWrapperElement}
+      style={{ width: 400, height: 300, backgroundColor: "grey" }}
+    />
+  );
 }
 
 export default Map;

@@ -1,3 +1,5 @@
+## Props Design
+
 ## Making impossible states impossible
 
 ## Variants
@@ -52,8 +54,8 @@ variant: up | down;
 
 ```jsx
 // oh oh
-<Arrow color="black" lineStyle="solid" variant="up" />
-<Arrow color="black" lineStyle="solid" variant="down" />
+<Arrow color="black" lineStyle="dotted" variant="up" />
+<Arrow color="black" lineStyle="dotted" variant="down" />
 ```
 
 ```js
