@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-function App() {
+function App(props) {
   function onOnline(evt) {
     console.log("online", evt);
   }

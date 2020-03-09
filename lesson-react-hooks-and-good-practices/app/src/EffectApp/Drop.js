@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
-function App() {
+function Drop() {
+  console.log("render Drop");
+
   function onOnline(evt) {
     console.log("online", evt);
   }
@@ -11,4 +13,4 @@ function App() {
   return <div>Drop v1</div>;
 }
 
-export default App;
+export default Drop;
