@@ -1,5 +1,5 @@
 import React from "react";
-import Arrow2 from "./Arrow2";
+import Arrow3 from "./Arrow3";
 
 function App() {
   return (
