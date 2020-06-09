@@ -27,11 +27,17 @@ yarn dev
 
 ### Add SQL
 
-Run
+Set up the database:
+
+```sql
+CREATE DATABASE todos_next;
+CREATE USER todos_next WITH ENCRYPTED PASSWORD 'todos_next';
+GRANT ALL PRIVILEGES ON DATABASE todos_next TO todos_next;
+```
+
+Add dependencies:
 
 ```sh
-createuser --createdb --superuser todos_next
-createdb -O todos_next todos_next
 yarn add dotenv postgres ley
 ```
 
