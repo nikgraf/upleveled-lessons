@@ -29,6 +29,12 @@ yarn dev
 
 Set up the database:
 
+```
+psql postgres
+```
+
+In there run
+
 ```sql
 CREATE DATABASE todos_next;
 CREATE USER todos_next WITH ENCRYPTED PASSWORD 'todos_next';
