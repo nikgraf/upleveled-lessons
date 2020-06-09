@@ -46,7 +46,7 @@ GRANT ALL PRIVILEGES ON DATABASE todos_next TO todos_next;
 Add dependencies:
 
 ```sh
-yarn add dotenv postgres ley
+yarn add dotenv dotenv-cli postgres ley
 ```
 
 Add the file .env in the project root
