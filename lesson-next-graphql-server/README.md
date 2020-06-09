@@ -2,15 +2,17 @@
 
 ## Setup
 
-```
-npx create-next-app --example api-routes-apollo-server todos
-# or
-yarn create next-app --example api-routes-apollo-server todos
+First, create a repository on GitHub, clone it and `cd` into the directory.
+
+Then run:
+
+```sh
+npx create-next-app --example api-routes-apollo-server .
 ```
 
 ## Development
 
-```
+```sh
 cd todos
 yarn dev
 ```
@@ -29,7 +31,7 @@ yarn dev
 
 Set up the database:
 
-```
+```sh
 psql postgres
 ```
 
@@ -49,7 +51,7 @@ yarn add dotenv postgres ley
 
 Add the file .env in the project root
 
-```
+```sh
 PGHOST=localhost
 PGDATABASE=todos_next
 PGUSERNAME=todos_next
@@ -58,7 +60,7 @@ PGPASSWORD=todos_next
 
 Copy the migration folder from the repo and run the migrations
 
-```
+```sh
 yarn ley up
 ```
 
