@@ -1,35 +1,76 @@
 # (Next) GraphQL Server
 
-https://github.com/zeit/next.js/tree/master/examples/api-routes-graphql
+## Setup
 
 ```
-yarn create next-app --example api-routes-graphql api-routes-graphql-app
+npx create-next-app --example api-routes-apollo-server todos
+# or
+yarn create next-app --example api-routes-apollo-server todos
 ```
 
+## Development
+
 ```
+cd todos
 yarn dev
 ```
 
-## Let's manipulate the data and add a name
-
-## Debugging
+### Explore the GraphQL API with GraphiQL
 
 - check out http://localhost:3000/api/graphql
-- add logging
-- move it away from initial props -> only client side
 
-## What do we need (in the Apollo Server case)
+### Static Result
 
-- typeDefs
-- resolvers
+- Return a list of all todos (static)
+- Return one single todo
+- Filter list of todos by `checked`
 
-Nesting, what? 🤯
+### Add SQL
 
-## Exercise
+Run
 
-1. Create a query recipies.
-2. It returns a list of recipies.
-3. A recipie has a field title of type String and a field vegetarian of type Boolean.
+```sh
+createuser --createdb --superuser todos_next
+createdb -O todos_next todos_next
+yarn add dotenv postgres ley
+```
+
+Add the file .env in the project root
+
+```
+PGHOST=localhost
+PGDATABASE=todos_next
+PGUSERNAME=todos_next
+PGPASSWORD=todos_next
+```
+
+Copy the migration folder from the repo and run the migrations
+
+```
+yarn ley up
+```
+
+JS to initialize the DB (do not do this in Prod?!? (connection management))
+
+```js
+require("dotenv").config();
+const postgres = require("postgres");
+const sql = postgres();
+```
+
+- Return a list of all todos
+- Return one single todo
+- Filter list of todos by `checked`
+
+### Mutation
+
+- Create a todo
+
+### Nesting
+
+What? 🤯
+
+- create manipulated property based on an existing one e.g. slug
 
 ## Home work: Add Apollo Client
 
