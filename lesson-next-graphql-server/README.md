@@ -27,6 +27,25 @@ yarn dev
 - Return one single todo
 - Filter list of todos by `checked`
 
+```graphql
+{
+  todos(filterChecked: false) {
+    id
+    title
+  }
+}
+```
+
+```graphql
+{
+  todo(id: "2") {
+    id
+    title
+    checked
+  }
+}
+```
+
 ### Add SQL
 
 Set up the database:
@@ -79,6 +98,17 @@ const sql = postgres();
 ### Mutation
 
 - Create a todo
+
+```graphql
+# Write your query or mutation here
+mutation {
+  createTodo(title: "Call my Brother") {
+    id
+    title
+    checked
+  }
+}
+```
 
 ### Nesting
 
