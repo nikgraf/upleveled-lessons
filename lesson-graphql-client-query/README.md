@@ -61,42 +61,30 @@ https://www.apollographql.com/docs/react/get-started/
 
 ## Exercise
 
-Build you own Profile page based on Github e.g. https://github.com/nikgraf using the https://www.graphqlhub.com/ GraphQL Endpoint
+Build you own Profile page based on Github e.g. https://github.com/nikgraf using the Github GraphQL Endpoint
 
 - Show your name
 - Show your Github Avatar
 - Show a list of (public) repositories
 
-```graphql
-{
-  github {
-    user(username: "nikgraf") {
-      id
-      avatar_url
-      repos {
-        name
-      }
-    }
-  }
-}
-```
-
-https://www.graphqlhub.com/playground?query=%7B%0A%20%20github%20%7B%0A%20%20%20%20user(username%3A%20%22nikgraf%22)%20%7B%0A%20%20%20%20%20%20id%0A%20%20%20%20%20%20avatar_url%0A%20%20%20%20%20%20repos%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A
-
 Other public APIs https://github.com/APIs-guru/graphql-apis
+
+1. Generate an access token:
+   https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
 
 _Hint_:
 
-- `npm install --save graphql`
-- `npm install --save apollo-boost`
-- `npm install --save react-apollo`
+- `yarn add @apollo/client graphql`
 
 ```js
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://www.graphqlhub.com/graphql",
+  uri: "https://api.github.com/graphql",
+  cache: new InMemoryCache(),
+  headers: {
+    authorization: "Bearer TODO",
+  },
 });
 ```
 
@@ -105,8 +93,7 @@ const client = new ApolloClient({
 ```
 
 ```jsx
-import { useQuery } from "react-apollo";
-import { gql } from "apollo-boost";
+import { gql, useQuery } from "@apollo/client";
 
 const profileQuery = gql`
   TODO YOUR QUERY

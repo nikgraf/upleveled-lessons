@@ -1,20 +1,28 @@
 import Head from "next/head";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider, useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import {
+  ApolloClient,
+  InMemoryCache,
+  gql,
+  ApolloProvider,
+  useQuery,
+} from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://www.graphqlhub.com/graphql",
+  uri: "https://api.github.com/graphql",
+  cache: new InMemoryCache(),
+  headers: {
+    authorization: "Bearer TODO",
+  },
 });
 
 const githubQuery = gql`
   query profileQuery($name: String!) {
-    github {
-      user(username: $name) {
-        id
-        avatar_url
-        login
-        repos {
+    user(login: $name) {
+      id
+      login
+      avatarUrl
+      repositories(last: 10) {
+        nodes {
           id
           name
         }
@@ -36,12 +44,12 @@ const Profile = (props) => {
   return (
     <div>
       <Head>
-        <title>{data.github.user.login}</title>
+        <title>{data.user.login}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <img src={data.github.user.avatar_url} />
+      <img src={data.user.avatarUrl} />
       <ul>
-        {data.github.user.repos.map((repo) => {
+        {data.user.repositories.nodes.map((repo) => {
           return <li key={repo.id}>{repo.name}</li>;
         })}
       </ul>
