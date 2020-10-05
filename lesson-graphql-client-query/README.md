@@ -47,7 +47,7 @@ _Hint_: The schema has some duplications of data e.g. people & edges.node contai
 
 _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
-- Query the population and all the resisents on the planet Naboo.
+- Query the population and all the residents on the planet Naboo.
 
 2. Use the Github GraphQL API `https://developer.github.com/v4/explorer/` to query
 
