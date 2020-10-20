@@ -13,7 +13,6 @@ npx create-next-app --example api-routes-apollo-server .
 ## Development
 
 ```sh
-cd todos
 yarn dev
 ```
 
@@ -80,7 +79,7 @@ PGPASSWORD=todos_next
 Copy the migration folder from https://github.com/nikgraf/upleveled-lessons/tree/master/lesson-next-graphql-server/todos and run the migrations
 
 ```sh
-yarn ley up
+yarn dotenv ley up
 ```
 
 JS to initialize the DB (do not do this in Prod?!? (connection management))
