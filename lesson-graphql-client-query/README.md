@@ -49,7 +49,7 @@ _Hint_: Get Luke by his id, which you can get from `allPeople`.
 
 - Query the population and all the residents on the planet Naboo.
 
-2. Use the Github GraphQL API `https://docs.github.com/v4/explorer/` to query
+2. Use the [Github GraphQL API](https://docs.github.com/en/graphql/overview/explorer) to query
 
 - Your repositories (first 10)
 - Extend the query to show the default branch of each repository
